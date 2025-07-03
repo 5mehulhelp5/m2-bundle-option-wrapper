@@ -1,0 +1,22 @@
+<?php
+
+declare(strict_types=1);
+
+use Infrangible\BundleOptionWrapper\Catalog\Product\View\Type\Bundle\Option;
+use Magento\Framework\View\TemplateEngine\Php;
+
+/**
+ * @author      Andreas Knollmann
+ * @copyright   2014-2025 Softwareentwicklung Andreas Knollmann
+ * @license     http://www.opensource.org/licenses/mit-license.php MIT
+ */
+
+/** @var Php $this */
+/** @var Option $block */
+
+$option = $block->getBundleOption();
+?>
+
+<div id="bundle-option-<?= $option->getId(); ?>" data-option-id="<?= $option->getId(); ?>" class="field-wrapper field-wrapper-<?= $option->getType(); ?> field-wrapper-<?= $block->getBundleOptionTitle(); ?>">
+    <?= $block->getBundleOptionHtml(); ?>
+</div>
